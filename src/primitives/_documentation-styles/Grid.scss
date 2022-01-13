@@ -1,0 +1,40 @@
+/* stylelint-disable declaration-block-no-duplicate-properties */
+.documentation-grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -($documentation-padding / 2);
+
+  > .documentation-grid--item {
+    flex: 0 0 240px;
+    margin: 0 0 ($documentation-padding / 2) ($documentation-padding / 2);
+  }
+
+  &--list {
+    display: flex;
+    flex-direction: column;
+
+    > .documentation-grid--item {
+      flex: 0 0 auto;
+      margin-bottom: $documentation-padding;
+    }
+  }
+
+  &--large {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -$documentation-padding;
+
+    > .documentation-grid--item {
+      flex: 0 0 300px;
+      margin: 0 0 $documentation-padding $documentation-padding;
+    }
+  }
+
+  &--feature {
+    display: grid;
+    grid-gap: $documentation-padding / 2;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr;
+    width: 100%;
+  }
+}

@@ -1,0 +1,26 @@
+.acg-wrapper,
+%acg-wrapper {
+  width: 95%;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.acg-wrapper--wide,
+%acg-wrapper--wide {
+  width: 95%;
+  max-width: 1264px;
+  margin: 0 auto;
+}
+
+.acg-wrapper--narrow,
+%acg-wrapper--narrow {
+  width: 95%;
+  max-width: 1096px;
+  margin: 0 auto;
+}
+
+@mixin acg-wrapper--wide {
+  width: 95%;
+  max-width: 1264px;
+  margin: 0 auto;
+}

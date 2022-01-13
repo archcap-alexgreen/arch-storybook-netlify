@@ -1,0 +1,35 @@
+$icon-width: 90px;
+
+.acg-card__icon {
+  @include spacing-inset-32;
+  background-color: $color-system-white;
+  text-align: center;
+
+  .acg-card__image-container {
+    width: 100%;
+    margin-bottom: $spacing-stack-16;
+  }
+
+  .acg-card__image {
+    width: $icon-width;
+    margin: 0 auto;
+  }
+
+  .acg-card__cta {
+    display: flex;
+    justify-content: center;
+    margin-top: $spacing-stack-32;
+  }
+
+  .acg-btn--link {
+    padding-top: 0;
+
+    + .acg-btn--link {
+      &::before {
+        display: inline-block;
+        margin: 0 $spacing-inline-4;
+        content: "|";
+      }
+    }
+  }
+}

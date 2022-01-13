@@ -1,0 +1,180 @@
+[
+  {
+    "name": "blue",
+    "section": "brand",
+    "color": "#0057b8"
+  },
+  {
+    "name": "blue",
+    "section": "limited",
+    "variants": [
+      {
+        "name": "30",
+        "color": "#80abdc"
+      },
+      {
+        "name": "50",
+        "color": "#3379c6"
+      },
+      {
+        "name": "80",
+        "color": "#00244d"
+      }
+    ]
+  },
+  {
+    "name": "aqua",
+    "section": "brand",
+    "color": "#5bc2e7"
+  },
+  {
+    "name": "aqua",
+    "section": "secondary",
+    "variants": [
+      {
+        "name": "20",
+        "color": "#def3fa"
+      },
+      {
+        "name": "30",
+        "color": "#ceedf8"
+      },
+      {
+        "name": "50",
+        "color": "#ade1f3"
+      }
+    ]
+  },
+  {
+    "name": "teal",
+    "section": "brand",
+    "color": "#009CA6"
+  },
+  {
+    "name": "teal",
+    "section": "secondary",
+    "variants": [
+      {
+        "name": "50",
+        "color": "#33b0b8"
+      },
+      {
+        "name": "80",
+        "color": "#007780"
+      }
+    ]
+  },
+  {
+    "name": "green",
+    "section": "brand",
+    "color": "#99c221"
+  },
+  {
+    "name": "green",
+    "section": "secondary",
+    "variants": [
+      {
+        "name": "30",
+        "color": "#e0edbc"
+      },
+      {
+        "name": "50",
+        "color": "#cce190"
+      }
+    ]
+  },
+  {
+    "name": "red",
+    "section": "brand",
+    "color": "#ba0c2f"
+  },
+  {
+    "name": "yellow",
+    "section": "brand",
+    "color": "#fedb00"
+  },
+  {
+    "name": "yellow",
+    "section": "secondary",
+    "variants": [
+      {
+        "name": "50",
+        "color": "#ffed80"
+      },
+      {
+        "name": "80",
+        "color": "#fee233"
+      }
+    ]
+  },
+  {
+    "name": "purple",
+    "section": "brand",
+    "color": "#5f259f"
+  },
+  {
+    "name": "purple",
+    "section": "secondary",
+    "color": "#7f51b2"
+  },
+  {
+    "name": "orange",
+    "section": "brand",
+    "color": "#ffa300"
+  },
+  {
+    "name": "orange",
+    "section": "secondary",
+    "color": "#ffb533"
+  },
+  {
+    "name": "beige",
+    "section": "brand",
+    "color": "#dfd1a7"
+  },
+  {
+    "name": "beige",
+    "section": "secondary",
+    "color": "#e5dab9"
+  },
+  {
+    "name": "white",
+    "section": "system",
+    "color": "#ffffff"
+  },
+  {
+    "name": "gray",
+    "section": "system",
+    "variants" : [
+      {
+        "name": "05",
+        "color": "#f6f6f6"
+      },
+      {
+        "name": "10",
+        "color": "#d6d9da"
+      },
+      {
+        "name": "20",
+        "color": "#c2c5c8"
+      },
+      {
+        "name": "30",
+        "color": "#999fa4"
+      },
+      {
+        "name": "40",
+        "color": "#5c656d"
+      },
+      {
+        "name": "50",
+        "color": "#333f48"
+      }
+    ]
+  },
+  {
+    "name": "black",
+    "section": "system",
+    "color": "#000"
+  }
+]

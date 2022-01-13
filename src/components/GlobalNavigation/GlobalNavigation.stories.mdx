@@ -1,0 +1,61 @@
+import { Meta, Story } from '@storybook/addon-docs/blocks';
+import * as stories from './GlobalNavigation.js';
+
+<Meta title="Navigation / Global Navigation" />
+
+# Global Navigation
+
+## Overview
+
+The global nav is the main way people navigate to different segments, and static pages (Investors, Careers, and News) within the Arch site
+
+<Story name="Default" parameters={{ options: { showPanel: false } }}>
+  {stories.Default()}
+</Story>
+
+<br />
+
+### When to use this
+
+- This component should be in use at all times within the site
+
+## How it works
+
+- The primary navigation is a fixed panel on the top of the screen, above the main nav.
+- Segments are fixed to the left, while pages, search, and stock ticker are fixed to the right.
+- Clicking on the magnify glass will begin a site wide search.
+- The active segment is highlighted in Brand Blue.
+
+### Context Sections
+
+#### Main Content
+
+- Enable users to navigate between different segments with ease and inform the user of which segment they're currently visiting.
+
+#### Topics Navigation Content
+
+Different segments and commonly visited pages
+- Arch Capital Group
+- Insurance
+- Reinsurance
+- Mortgage Insurance
+- Investors
+- Careers
+- News
+
+## Visual Details
+
+### Color
+
+- Background is System Gray 50
+- Active segment or page is highlighted in Brand Blue
+- Text is white
+
+### Sizing
+
+- It takes up 100% of the horizontal space
+
+### Typography
+
+- Inactive: Open Sans 12 Regular
+- Active: Open Sans 12 Semibold

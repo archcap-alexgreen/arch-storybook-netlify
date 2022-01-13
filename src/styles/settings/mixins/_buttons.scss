@@ -1,0 +1,96 @@
+/* ----------------------------------------------*\
+      Primary Button
+  \*---------------------------------------------- */
+@mixin btn--primary-colors(
+  $foreground: $color-system-white,
+  $background: $color-brand-blue
+) {
+  border: 2px solid $background;
+  border-radius: $border-radius-xsmall;
+  background: $background;
+  color: $foreground;
+
+  > svg {
+    fill: $foreground;
+  }
+
+  &:hover,
+  &:focus {
+    background: darken($background, 10%);
+
+    &::after {
+      border-color: $background;
+    }
+  }
+
+  &:active {
+    background: darken($background, 15%);
+  }
+
+  &[disabled],
+  &:disabled {
+    border-color: $background;
+    background: $background;
+    cursor: default;
+  }
+}
+
+/* ----------------------------------------------*\
+      Secondary Button
+  \*---------------------------------------------- */
+@mixin btn--secondary-colors($foreground: $color-brand-blue) {
+  border: 2px solid $foreground;
+  border-radius: $border-radius-xsmall;
+  color: $foreground;
+
+  > svg {
+    fill: $foreground;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+
+  &:active {
+    border-color: $foreground;
+    background-color: rgba(0, 0, 0, 0.1);
+    color: $foreground;
+  }
+
+  &[disabled],
+  &:disabled {
+    border-color: $foreground;
+    color: $foreground;
+    cursor: default;
+
+    &:hover {
+      background: none;
+    }
+  }
+}
+
+/* ----------------------------------------------*\
+      Link Button
+  \*---------------------------------------------- */
+@mixin btn--link-colors($foreground: $color-brand-blue) {
+  @include type-body-small($foreground, $font-weight-600);
+  border-radius: 0;
+  background: none;
+  color: $foreground;
+
+  &:hover,
+  &:focus {
+    color: darken($foreground, 10%);
+  }
+
+  &:active {
+    color: darken($foreground, 15%);
+  }
+
+  &[disabled],
+  &:disabled {
+    color: $foreground;
+    
+  }
+}

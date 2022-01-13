@@ -1,0 +1,63 @@
+import { Meta, Story } from '@storybook/addon-docs/blocks';
+import * as stories from './Icons.js';
+
+<Meta title="Primitives / Icons" />
+
+# Iconography
+
+Icons used on the Arch Capital Group website are there to help visualize different actions, navigation, or enhance the visual interest of a section shown in the UI.
+
+<br />
+
+<Story name="All">
+  {stories.all()}
+</Story>
+
+<br />
+
+## When to use Iconography
+
+Icons should be used in combination with text, acting as a visual shortcut for interacting with elements in the UI. They should be used for elements that are crucial for completing a task. Not every text element needs an icon associated with it.
+
+Iconography is used most commonly in these contexts:
+
+- Action Buttons
+- Indicators / Alerts
+- Navigation menus
+- Social Media Links
+
+### Iconography Best Practices
+
+- Unless you're certain users will understand an icon's meaning, avoid using iconography alone without supporting text when used for an interactive element. Deciphering the meaning of an icon can be subjective and mean different things depending on the user. The text label helps avoid confusion.
+- Don't use two icons combined with one text element. An icon is meant to be the visual representation of one label.
+
+---
+
+## How it works
+
+The Arch Capital Group system uses [Font Awesome](https://fontawesome.com) for it's icon library. When choosing an icon, be sure to choose one from the Font Awesome library. This will help to maintain a consistent look & feel throughout the app.
+
+### Adding New Icons
+
+Font Awesome has a large selection of icons for various use cases.
+
+- Find an icon using the [Font Awesome web app](https://fontawesome.com/icons?d=gallery).
+- When naming the icon, consider the function of the icon in its context. The name of the icon should either reflect its function or the destination associated with that icon.
+- Export the icon as an SVG and share with the development team
+
+---
+
+## Visual Details
+
+### Style
+
+The style for icons can vary depending on where and when they are used. Icons should be simplified, showing only the necessary details needed to communicate information.
+
+#### Navigation elements, buttons, and general UI
+
+- When possible, use simplified, solid, rounded corner icons. This allows the icon to have a clear active state when in that section of the app.
+
+### Color
+
+- Icons should only use one color that is appropriate for the situation.
+- In most cases, an icon used for an interactive element in the UI will use the Primary Blue (#0057B8) but can also be found using System Gray 50 (#333f48) or white (#ffffff)

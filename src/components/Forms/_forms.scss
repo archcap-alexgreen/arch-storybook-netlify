@@ -1,0 +1,76 @@
+/* ----------------------------------------------*\
+    Form Row
+\*---------------------------------------------- */
+
+.acg-form__row {
+  position: relative;
+  margin-bottom: 1rem;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.acg-form__row--group {
+  position: relative;
+  margin-bottom: $spacing-inline-12;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.acg-form__fieldset {
+  &.acg-disabled {
+    @include opacity--disabled;
+  }
+}
+
+/* ----------------------------------------------*\
+      Form controls for labels and legends
+\*---------------------------------------------- */
+
+.acg-form__label {
+  @include type-body-small($color-system-gray-40);
+  display: block;
+  position: relative;
+  padding-bottom: 10px;
+
+  .acg-form__label-text {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .acg-form__label-optional {
+    font-style: italic;
+  }
+}
+
+/* ----------------------------------------------*\
+      Icon State
+\*---------------------------------------------- */
+
+.acg-form__state-icon {
+  display: flex;
+  position: absolute;
+  left: 8px;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  padding: 3px;
+  border-radius: $border-radius-round;
+  font-size: 12px;
+
+  &--error {
+    left: 8px;
+    background-color: $color-brand-red;
+    color: $color-system-white;
+  }
+
+  &--success {
+    left: 8px;
+    background-color: $color-brand-green;
+    color: $color-system-white;
+  }
+}

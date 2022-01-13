@@ -1,0 +1,23 @@
+import { Meta, Story } from '@storybook/addon-docs/blocks';
+import searchInput from './SearchInput.js';
+
+<Meta title="Controls &amp; Inputs / Search Input" />
+
+# Search
+
+Visually, search fields are the same as text fields. The main difference being the addition of a search icon within the field.
+
+Functionally they differ from text fields. Search fields can be used to filter a list of items, live or after submitting an explicit "search" action.
+
+<Story name="Default">
+  {searchInput()}
+</Story>
+
+<br />
+
+## Visual Details
+
+### Active state
+
+- When the search input is in its active state, a blue border will show up within the input. At this point the user can begin their search
+

@@ -1,0 +1,57 @@
+$container-colors: (
+  "blue": $color-brand-blue,
+  "gray": $color-system-gray-05,
+  "purple": $color-brand-purple
+);
+
+.acg-container {
+  padding: $spacing-stack-32 0;
+  background-color: $color-system-white;
+
+  @include wider-than($breakpoint-tablet) {
+    padding: $spacing-stack-64 0;
+  }
+}
+
+@each $name, $color in $container-colors {
+  .acg-container--#{$name} {
+    @include text-contrast($color);
+    background-color: $color;
+  }
+}
+
+@each $name, $color in $brand-primary-colors-update-teal {
+  .acg-container--slant-#{$name} {
+    @include basic-slanted-background(
+      $angle: 10deg,
+      $background: $color,
+      $background-position: calc(50% + 32px),
+      $side: "right"
+    );
+    margin: $spacing-stack-32 0;
+    padding: $spacing-stack-32 0;
+
+    @include wider-than($breakpoint-mobile) {
+      @include basic-slanted-background(
+        $background: $color,
+        $background-position: 39%
+      );
+    }
+
+    &.acg-container--right {
+      @include basic-slanted-background(
+        $angle: -10deg,
+        $background: $color,
+        $background-position: calc(50% - 32px)
+      );
+
+      @include wider-than($breakpoint-mobile) {
+        @include basic-slanted-background(
+          $background: $color,
+          $background-position: 61%,
+          $side: "right"
+        );
+      }
+    }
+  }
+}

@@ -1,0 +1,240 @@
+.acg-card {
+  @include card-container-shadow;
+  @include spacing-inset-32;
+}
+
+.acg-card__heading {
+  @include type-display-tiny;
+  @include type-style-bold;
+  margin-bottom: $spacing-stack-16;
+  line-height: 1;
+}
+
+.acg-card__eyebrow {
+  @include type-body-xsmall($color-limited-blue-80, $font-weight-600);
+}
+
+.acg-card__desc {
+  @include type-body-small($color-system-gray-40);
+  margin: 0;
+  line-height: 1.85;
+}
+
+.acg-card__btn {
+  display: inline-block;
+  margin-top: $spacing-stack-24;
+}
+
+.acg-card--featured {
+  .acg-card__heading {
+    @include type-display-small;
+    color: $color-brand-blue;
+  }
+
+  .acg-card__desc {
+    @include type-body-default($color-system-gray-40);
+  }
+}
+
+// Border Style
+.acg-card--border {
+  border-bottom: 16px solid transparent;
+}
+
+@each $name, $color in $brand-primary-colors {
+  .acg-card--border--#{$name} {
+    border-color: $color;
+  }
+}
+
+// Location Card
+.acg-card--location {
+  @include spacing-squish-16-24;
+  display: flex;
+  margin-bottom: $spacing-stack-12;
+
+  .acg-card__content {
+    width: 75%;
+  }
+
+  .acg-card__heading {
+    @include type-body-default;
+    @include type-style-bold;
+    margin: 0;
+  }
+
+  .acg-card__desc {
+    @include type-body-xsmall($color-system-gray-40);
+    margin-top: $spacing-stack-8;
+    line-height: 1.33;
+  }
+
+  .acg-card__desc--phone {
+    color: $color-brand-blue;
+  }
+
+  .acg-card__btn {
+    align-self: flex-end;
+    margin-left: auto;
+  }
+}
+
+// Product Card
+.acg-card--product {
+  @include card-container-border;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  box-shadow: none;
+
+  .acg-card__image {
+    flex: 0 1 260px;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+  }
+
+  .acg-card__content {
+    @include spacing-squish-16-24;
+  }
+
+  .acg-card__heading {
+    margin-bottom: $spacing-stack-16;
+  }
+
+  .acg-card__desc {
+    @include type-body-default($color-system-gray-40);
+  }
+
+  @include wider-than($breakpoint-tablet) {
+    flex-direction: row;
+
+    .acg-card__content {
+      @include spacing-inset-32;
+      margin: auto 0;
+    }
+
+    .acg-card__image {
+      display: none;
+    }
+  }
+
+  @include wider-than($breakpoint-desktop) {
+    .acg-card__image {
+      display: block;
+      flex: 0 0 260px;
+    }
+  }
+}
+
+.acg-card--product--featured {
+  flex-direction: column;
+
+  .acg-card__image {
+    display: block;
+    flex: 0 0 260px;
+  }
+
+  .acg-card__content {
+    margin: auto;
+  }
+}
+
+// Link List Card
+.acg-card--link-list {
+  .acg-card__heading {
+    color: $color-system-gray-50;
+  }
+}
+
+// Contact Card
+.acg-card--contact {
+  @include spacing-squish-24-32;
+  display: flex;
+  text-align: left;
+  box-shadow: none;
+
+  .acg-card__image {
+    flex: 0 0 110px;
+    width: 110px;
+    height: 148px;
+    margin-right: $spacing-inline-24;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+  }
+
+  .acg-card__eyebrow {
+    @include type-body-small($color-system-gray-30, $font-weight-600);
+    margin-bottom: $spacing-stack-4;
+  }
+
+  .acg-card__heading {
+    margin-bottom: $spacing-stack-4;
+  }
+
+  .acg-card__desc {
+    margin-bottom: $spacing-stack-12;
+
+    &:not(:last-of-type) {
+      margin-bottom: 0;
+    }
+  }
+
+  .acg-card__meta__item {
+    @include type-body-small($color-system-gray-40);
+  }
+
+  .acg-icon {
+    margin-right: $spacing-inline-16;
+    color: $color-brand-blue;
+  }
+}
+
+.acg-card--contact--border {
+  @include card-container-border;
+}
+
+// Container Card
+.acg-card--container {
+  @include card-container-border;
+  padding: 0;
+  box-shadow: none;
+
+  .acg-card__title {
+    @include type-body-default($color-system-gray-50, $font-weight-600);
+    @include spacing-squish-12-24;
+    margin-bottom: 0;
+    background: $color-system-gray-05;
+
+    @include wider-than($breakpoint-tablet) {
+      padding: $spacing-stack-12 $spacing-stack-64;
+    }
+  }
+
+  > .acg-card__content {
+    @include spacing-squish-16-24;
+    @include wider-than($breakpoint-tablet) {
+      @include spacing-squish-32-64;
+    }
+  }
+}
+
+// Locations Card
+.acg-card--locations {
+  @include wider-than($breakpoint-tablet) {
+    > .acg-card__title {
+      padding-left: $spacing-inline-64 + $spacing-inline-12;
+    }
+
+    > .acg-card__content {
+      display: flex;
+      flex-flow: row wrap;
+    }
+
+    .acg-card--location {
+      width: 30%;
+      margin: $spacing-inline-12;
+    }
+  }
+}

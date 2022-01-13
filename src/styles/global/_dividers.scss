@@ -1,0 +1,7 @@
+.acg-divider--vertical {
+  @include divider-vertical;
+}
+
+.acg-divider--horizontal {
+  @include divider-horizontal;
+}

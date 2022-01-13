@@ -1,0 +1,44 @@
+import { Meta, Story } from '@storybook/addon-docs/blocks';
+import * as stories from './Grids.js';
+
+<Meta title="Blocks / Grids" />
+
+# Grids
+
+There are 2 grids being used on the Arch site.
+
+## Person grids
+
+Person grids are used to present many results when a user searches through the "Find an Insurance Contact" page. Results will be laid out in this person grid format. The information for each contact will include an image, their name, title, region, and an option to read more.
+
+<br />
+
+<Story name="Person Grid">
+  {stories.PersonGrid()}
+</Story>
+
+<br />
+
+## Product grids
+Similarly to person grids, product grids are used to show multiple products at a time. Each block inside these grids show a product image, title, description, and option to learn more.
+
+<br />
+
+<Story name="Product Grid">
+  {stories.ProductGrid()}
+</Story>
+
+<Story name="Product Grid Alternate">
+  {stories.ProductGridAlt()}
+</Story>
+
+<br />
+
+## Featured Content Grid
+The Featured Content Grid allows for posts, events, and manually entered content to be displayed in a prominent manner. Each block inside these grids shows an image, title, description, an option to learn more, tag, date, and author attribution.
+
+<br />
+
+<Story name="Featured Content Grid">
+  {stories.FeaturedContentGrid()}
+</Story>

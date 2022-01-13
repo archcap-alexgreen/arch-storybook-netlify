@@ -1,0 +1,119 @@
+/* ----------------------------------------------*\
+      Select
+\*---------------------------------------------- */
+
+.acg-form__select {
+  display: flex;
+  z-index: 1;
+  position: relative;
+  justify-content: flex-end;
+  background-color: transparent;
+  box-shadow: none;
+  appearance: none;
+
+  &::after {
+    @include icon-font("\f078");
+    @include spacing-inset-8;
+    display: inline-block;
+    z-index: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    align-items: center;
+    justify-content: flex-end;
+  }
+}
+
+.acg-form__select__input {
+  @include type-body-small;
+  @include form-input-border;
+  width: 100%;
+  border-radius: $border-radius-small;
+  background-image: none;
+
+  // fixes hidden focus ring on mac firefox
+  &:focus {
+    box-shadow: 0 0 0 3px -moz-mac-focusring;
+  }
+
+  &:disabled {
+    pointer-events: none;
+    @include opacity--disabled;
+  }
+}
+
+.acg-form__select__input--large {
+  @include spacing-inset-16;
+}
+
+.acg-form__select__input--medium {
+  @include spacing-inset-8;
+}
+
+.acg-form__select__input--small {
+  @include spacing-squish-4-8;
+  font-size: $font-size-12;
+}
+
+/* ----------------------------------------------*\
+      Select Topic
+\*---------------------------------------------- */
+
+.acg-select-topic {
+  > .acg-form__label {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    padding-bottom: 0;
+  }
+
+  .acg-form__select {
+    position: absolute;
+    top: -4px;
+    right: -8px;
+    width: 100%;
+    min-width: 180px;
+    min-height: 60px;
+    opacity: 0; // Visually hidden until click
+
+    &::after {
+      content: none;
+    }
+  }
+
+  &__label {
+    @include type-display-medium($font-weight: $font-weight-400);
+    margin-right: $spacing-inline-16;
+  }
+
+  &__value {
+    position: relative;
+    border-bottom: 1px dashed $color-brand-blue;
+  }
+
+  &__trigger {
+    @include type-display-small($color-brand-blue, $font-weight-400);
+    @include spacing-inset-4;
+    display: block;
+
+    &::after {
+      @include icon-font("\f078");
+      display: inline-block;
+      position: relative;
+      top: -4px;
+      margin-left: $spacing-inline-8;
+      font-size: $font-size-16;
+    }
+  }
+
+  .acg-form__select__input {
+    @include type-body-default;
+    border: 0;
+    border-radius: 0;
+    cursor: pointer;
+  }
+}
+
+select::-ms-expand {
+  display: none;
+}

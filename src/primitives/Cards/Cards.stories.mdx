@@ -1,0 +1,46 @@
+import { Meta, Story } from '@storybook/addon-docs/blocks';
+import * as stories from './Cards.js';
+
+<Meta title="Primitives / Cards" />
+
+# Cards
+
+Cards are used as a container for groups of related information. In instances with different types of information to surface for Arch's product information and details, it is important to clearly separate one group of elements from another.
+
+---
+
+<Story name="All">
+  {stories.all()}
+</Story>
+
+## When to use cards
+
+Any combination of icons, text, buttons, images, status indicators that are related and represent a single unit, cards are used to group them. Cards can be used for news, announcements, products, and more.
+
+---
+
+## How it works
+
+When using cards, correct spacing around and in between the elements it contains is required. This specific sizing varies depending on the elements that are included.
+
+Generally, container and action cards should be placed on a surface with a System White or System Gray 05 background.
+
+### Card Types
+
+#### Container Cards
+
+Use a container card when the card is a simple container for information and/or interactive elements
+
+## Visual Details
+
+### Style
+
+- There are two styles for container cards, Bordered and Shadows. Both container styles are utilized to help information feel organized on a solid background. 
+
+#### Container Cards
+
+| Card Type | Background | Border             | Shadow                  |
+| --------- | ---------- | ------------------ | ----------------------- |
+| Border    | White      | 1px System Gray 20 | None                    |
+| Shadow    | White      | None               | rgba(51, 63, 72, 0.3);` |
+

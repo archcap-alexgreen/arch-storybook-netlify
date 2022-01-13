@@ -1,0 +1,7 @@
+.acg-card__container--border {
+  @include card-container-border;
+}
+
+.acg-card__container--shadow {
+  @include card-container-shadow;
+}

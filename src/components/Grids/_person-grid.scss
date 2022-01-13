@@ -1,0 +1,53 @@
+.acg-person__grid {
+  display: grid;
+  justify-content: center;
+  -ms-flex-pack: center;
+  width: auto;
+  margin: 0 auto;
+  grid-template-columns: repeat(2, minmax(0, 260px));
+  grid-template-rows: repeat(4, auto);
+  grid-gap: $spacing-inline-32;
+
+  @include wider-than($breakpoint-tablet) {
+    grid-template-columns: repeat(4, minmax(0, 260px));
+    grid-template-rows: repeat(2, auto);
+  }
+}
+
+.acg-person {
+  max-width: 260px;
+}
+
+.acg-person__info {
+  padding: $spacing-inline-24 0 0;
+}
+
+.acg-person__name {
+  @include type-display-tiny($color-limited-blue-80, $font-weight-600);
+}
+
+.acg-person__meta {
+  @include plain-list;
+  margin-bottom: $spacing-stack-16;
+  color: $color-system-gray-40;
+
+  li {
+    display: inline-block;
+
+    &::after {
+      content: "|";
+    }
+
+    &:last-of-type {
+      &::after {
+        content: "";
+      }
+    }
+  }
+}
+
+.acg-person__link {
+  display: block;
+  margin: 104px;
+  text-align: center;
+}

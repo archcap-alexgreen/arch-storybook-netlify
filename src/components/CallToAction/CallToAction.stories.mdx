@@ -1,0 +1,49 @@
+import { Meta, Story } from '@storybook/addon-docs/blocks';
+import * as stories from './CallToAction.js';
+
+<Meta title="Blocks / Call to Action" />
+
+# Call to Action
+
+Call to Action blocks contain the dynamic shape accompanied by a related image. These blocks are used to to view information and navigate the user to learn more about a given topic or announcement.
+
+---
+
+<br />
+
+<Story name="Default">{stories.Default()}</Story>
+
+<br />
+
+---
+
+## Available Color Combinations
+
+The Call to Action block colors have been curated to follow the contrast ratio of text and interactive elements required to meet the [level AA of the Web Content Accessibility Guidelines (WCAG 2.1)](https://www.w3.org/TR/WCAG21/#contrast-minimum).
+
+| Background | Line    | Text    | Button BG | Button Text |
+| ---------- | ------- | ------- | --------- | ----------- |
+| #33b0b8    | #fedb00 | #333f48 | #fedb00   | #333f48     |
+| #5bc2e7    | #5bc2e7 | #333f48 | #ade1f3   | #333f48     |
+| #99c221    | #ceedf8 | #333f48 | #def3fa   | #333f48     |
+| #007780    | #ceedf8 | #ffffff | #ceedf8   | #333f48     |
+| #5f259f    | #ceedf8 | #333f48 | #def3fa   | #5f259f     |
+| #ffa300    | #fedb00 | #ffffff | #def3fa   | #ffed80     |
+| #3379c6    | #99c221 | #333f48 | #cce190   | #0057b8     |
+| #fedb00    | #99c221 | #333f48 | #ffffff   | #007780     |
+
+---
+
+## Visual Details
+
+### Dynamic Shape
+
+Dynamic shapes anchor each Call to Action block either at the left of the image or the right of the image. This variation is used to create interesting visuals and movement as the user scrolls downt he page.
+
+The lines accompanying the dynamic shape are set at a 50% opacity.
+
+---
+
+## Layout
+
+- This component is centered and spans the full width of the page.

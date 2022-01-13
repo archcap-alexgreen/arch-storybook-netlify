@@ -1,0 +1,56 @@
+.acg-layout-switcher {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.acg-layout-switcher__opt__input {
+  @extend %accessibly-hidden;
+
+  &:checked + .acg-layout-switcher__opt__label {
+    border-color: $color-brand-blue;
+    color: $color-brand-blue;
+  }
+
+  &:focus + .acg-layout-switcher__opt__label,
+  &:hover + .acg-layout-switcher__opt__label {
+    border-color: $color-brand-blue;
+    color: $color-brand-blue;
+  }
+}
+
+.acg-layout-switcher__opt__label {
+  @include spacing-squish-4-8;
+  margin: 0 0 $spacing-stack-8 $spacing-inline-4;
+  border: 1px solid $color-system-gray-10;
+  border-radius: $border-radius-small;
+  color: $color-system-gray-10;
+  cursor: pointer;
+
+  .acg-icon {
+    font-size: $font-size-16;
+  }
+}
+
+.acg-layout-switcher--text {
+  .acg-layout-switcher__opt__input {
+    &:focus + .acg-layout-switcher__opt__label,
+    &:hover + .acg-layout-switcher__opt__label {
+      border-color: $color-brand-blue;
+      color: $color-brand-blue;
+    }
+
+    &:checked + .acg-layout-switcher__opt__label {
+      border-color: $color-brand-blue;
+      background-color: $color-brand-blue;
+      color: $color-system-white;
+    }
+  }
+
+  .acg-layout-switcher__opt__label {
+    @include spacing-squish-4-8;
+    margin-left: $spacing-inline-4;
+    border: 1px solid $color-system-gray-10;
+    border-radius: 0;
+    color: $color-system-gray-40;
+  }
+}

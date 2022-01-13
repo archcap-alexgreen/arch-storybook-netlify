@@ -1,0 +1,116 @@
+.acg-article-header {
+  display: flex;
+  flex: 1 1 auto;
+  flex-wrap: wrap;
+  justify-content: center;
+  min-height: 75px;
+
+  @include narrower-than($breakpoint-tablet) {
+    align-content: center;
+  }
+
+  @include wider-than($breakpoint-mobile) {
+    flex-wrap: nowrap;
+  }
+
+  &__item {
+    @include spacing-squish-4-8;
+    display: inline-flex;
+    flex-basis: auto;
+    align-items: center;
+    max-width: 300px;
+
+    @include wider-than($breakpoint-mobile) {
+      padding: 0 $spacing-inline-32;
+      border-right: 1px solid $color-system-gray-10;
+    }
+
+    &:first-of-type {
+      padding-left: 0;
+
+      @include narrower-than($breakpoint-tablet) {
+        flex-basis: 100%;
+        width: 100%;
+        margin-bottom: $spacing-stack-8;
+        padding-right: 0;
+        padding-bottom: $spacing-stack-8;
+        border-right: none;
+        border-bottom: 1px solid $color-system-gray-10;
+      }
+    }
+
+    &:last-of-type {
+      border-right: none;
+
+      @include narrower-than($breakpoint-tablet) {
+        padding-right: 0;
+        border-right: none;
+      }
+    }
+  }
+}
+
+.acg-author {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  max-width: 400px;
+
+  @include wider-than($breakpoint-mobile) {
+    min-width: 25%;
+  }
+
+  &__name {
+    @include type-body-default(inherit, $font-weight-600);
+    margin: 0;
+  }
+
+  &__title {
+    @include type-body-default;
+  }
+
+  &__avatar {
+    display: inline-block;
+    width: 75px;
+    min-width: 75px;
+    height: auto;
+    min-height: 75px;
+    margin-right: $spacing-inline-16;
+    background: $color-system-gray-10;
+    overflow: hidden;
+
+    > img {
+      display: block;
+      width: 100%;
+    }
+  }
+}
+
+.acg-article-header__read {
+  .acg-article-header__minutes {
+    font-weight: $font-weight-600;
+
+    @include wider-than($breakpoint-mobile) {
+      display: block;
+    }
+  }
+}
+
+.acg-social-sharing {
+  @include plain-list;
+
+  .acg-social-sharing__list {
+    display: inline-block;
+    margin-right: $spacing-inline-4;
+
+    [href] {
+      color: $color-system-gray-50;
+
+      &:hover,
+      &:focus {
+        color: $color-system-gray-30;
+      }
+    }
+  }
+}

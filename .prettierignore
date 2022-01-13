@@ -1,0 +1,10 @@
+package.json
+dist
+release
+node_modules
+build
+src/assets
+
+# Ignore files using CSS Grid
+_insights-card.scss
+_product-grid.scss

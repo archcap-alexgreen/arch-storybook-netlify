@@ -1,0 +1,90 @@
+import { Meta, Story } from '@storybook/addon-docs/blocks';
+import * as stories from './Hero';
+
+<Meta title="Blocks / Hero" />
+
+
+# Hero Blocks
+
+Heroes are the combination of images, graphic elements, colors, and information found at the top of each page. 
+
+
+## Types of Heroes
+
+There are 3 types of hero blocks which are determined by the hierarchy of their page.
+
+### Homepage
+![homepage](./docs/hero-homepage.jpg)
+
+  
+
+### Overlay
+
+![overlay](./docs/hero-overlay.jpg)
+  
+
+### Slanted
+
+![slanted](./assets/docs/hero-slanted.jpg)
+
+
+
+## Styles
+
+### Homepage
+
+Homepage heroes are found on the Arch Capital Group landing page and subsequent segment landing pages. Homepage heroes contain a full width image and two dynamic shapes layered on top of the image. The first dynamic shape is a vertically positioned shape and the second dynamic shape contains the information of the hero.
+
+#### Colors
+
+Both dynamic shapes on Homepage heroes should aim to be the same color. The dynamic shape containing the hero information should be at full opacity. The dynamic shape overlaying the background image has a 50% opacity.
+
+
+<br />
+
+<Story name="Homepage">
+  {stories.Homepage()}
+</Story>
+
+<br />
+
+### Slanted
+
+Slanted heroes consist of an image overlayed with a fully opaque dynamic shape. The header and subcopy of the page are contained withing this dynamic shape. Slanted hero styles are found on pages that are more unique and created with layouts custom made for the type of content present on the page.
+
+Examples of these pages include:
+
+* Careers
+* Sustainability
+* Insights
+
+
+<br />
+
+<Story name="Slanted">
+  {stories.Slanted()}
+</Story>
+
+<br />
+
+### Overlay
+
+Overlay heroes are consist of a full width image with a color overlayed on top set at an 80% opacity. These heroes are found on pages that function as destinations to consume a large amount of information. Pages like this follow a similar format, and can be easily identified by using this style of hero. 
+
+Examples of these pages include:
+
+* Product Pages
+* News Pages
+* Article Pages
+
+<br />
+
+<Story name="Overlay">
+  {stories.Overlay()}
+</Story>
+
+<br />
+
+<Story name="All" parameters={{ docs: { disable: true }}}>
+  {stories.All()}
+</Story>

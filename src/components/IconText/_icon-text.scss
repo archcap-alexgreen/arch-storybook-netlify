@@ -1,0 +1,24 @@
+.acg-icon-text {
+  display: flex;
+  align-items: flex-start;
+}
+
+.acg-icon-text__icon {
+  flex: 0 0 64px;
+  margin-right: $spacing-inline-32;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.acg-icon-text__content__heading {
+  @include type-body-large($color-system-gray-50, $font-weight-600);
+  margin-bottom: $spacing-stack-8;
+}
+
+.acg-icon-text__content__desc {
+  @include type-body-small($color-system-gray-40);
+  line-height: 1.7;
+}

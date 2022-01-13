@@ -1,0 +1,89 @@
+/* ----------------------------------------------*\
+      Form controls
+\*---------------------------------------------- */
+
+.acg-form__input,
+%form-input {
+  @include type-body-small;
+  @include form-input-border;
+  appearance: none;
+  width: 100%;
+  background-color: $color-system-white;
+  background-image: none;
+
+  &::placeholder {
+    @include type-body-default($color-system-gray-30);
+  }
+
+  &:focus {
+    outline: 2px solid #5e9ed6;
+
+    // WebKit gets native focus styles
+    @media (-webkit-min-device-pixel-ratio: 0) {
+      outline-style: auto;
+    }
+  }
+
+  &:disabled {
+    pointer-events: none;
+    @include opacity--disabled;
+  }
+
+  &.acg-form--is-error,
+  &.acg-form--is-success {
+    padding-left: 32px;
+  }
+
+  &.acg-form--is-error {
+    border-color: $color-brand-red;
+  }
+
+  &.acg-form--is-success {
+    border-color: $color-brand-green;
+  }
+}
+
+.acg-form__input--large {
+  @include spacing-inset-16;
+
+  + .acg-form__state-icon {
+    top: 50px;
+  }
+}
+
+.acg-form__input--medium {
+  @include spacing-inset-8;
+
+  + .acg-form__state-icon {
+    top: 42px;
+  }
+}
+
+.acg-form__input--small {
+  @include spacing-squish-4-8;
+  font-size: $font-size-12;
+
+  + .acg-form__state-icon {
+    top: 36px;
+  }
+
+  &::placeholder {
+    font-size: $font-size-12;
+  }
+}
+
+/* ----------------------------------------------*\
+      Error States
+\*---------------------------------------------- */
+
+.acg-form__input__error-msg {
+  @include type-body-small;
+  margin-top: $spacing-stack-4;
+  border-radius: $border-radius-xsmall;
+  color: $color-brand-red;
+  text-transform: none;
+
+  + .acg-form__row {
+    margin-top: 8px;
+  }
+}

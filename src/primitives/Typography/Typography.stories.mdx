@@ -1,0 +1,36 @@
+import { Meta, Story } from '@storybook/addon-docs/blocks';
+import * as stories from './Typography.js';
+
+<Meta title="Primitives / Typography" />
+
+# Typography
+
+<Story name="All" parameters={{ docs: { disable: true }, options: { showPanel: false } }}>
+  {stories.all()}
+</Story>
+
+## The Type Stack
+
+Arch Capital Group uses [Open Sans](https://fonts.google.com/specimen/Open+Sans), a Google Font.
+
+| Name                  | Font Size | Line Height | Typeface  | Weights  |
+| --------------------- | --------: | ----------: | --------- | -------- |
+| Display Large         |      72px |       108px | Open Sans | Semibold |
+| Display Medium        |      40px |        60px | Open Sans | Semibold |
+| Display Small         |      32px |        48px | Open Sans | Regular  |
+| Body Text Small       |      14px |        21px | Open Sans | Regular  |
+| Body Text Extra Small |      12px |        18px | Open Sans | Regular  |
+| Body Text Tiny        |      12px |        18px | Open Sans | Regular  |
+
+
+### Display Type
+<Story name="Display" parameters={{ options: { showPanel: false } }}>
+  {stories.display()}
+</Story>
+
+
+### Body Type
+<Story name="Body" parameters={{ options: { showPanel: false } }}>
+  {stories.body()}
+</Story>
+

@@ -1,0 +1,122 @@
+.acg-event {
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  &__image-wrapper,
+  &__content {
+    flex-basis: 50%;
+  }
+
+  &__image-wrapper {
+    margin-right: $spacing-inline-32;
+  }
+
+  &__content {
+    &__time {
+      @include type-body-small($color-system-gray-50, $font-weight-600);
+      display: block;
+      margin-bottom: $spacing-stack-8;
+    }
+
+    &__title {
+      @include type-body-large($color-brand-blue);
+    }
+
+    &__detail,
+    &__summary {
+      @include type-body-default($color-system-gray-50);
+    }
+
+    &__detail {
+      margin-bottom: $spacing-stack-8;
+    }
+
+    &__cta {
+      > .acg-icon {
+        margin-left: $spacing-inline-4;
+      }
+    }
+  }
+}
+
+.acg-event-grid {
+  @include wider-than($breakpoint-tablet) {
+    display: flex;
+    width: 100%;
+
+    &__list {
+      display: flex;
+      flex-basis: 50%;
+      flex-direction: column;
+    }
+  }
+
+  .acg-event {
+    margin-bottom: $spacing-stack-32;
+    padding-bottom: $spacing-stack-32;
+    border-bottom: 1px solid $color-system-gray-30;
+
+    &:nth-child(2) {
+      @include wider-than($breakpoint-tablet) {
+        padding-top: $spacing-stack-32;
+        padding-bottom: $spacing-stack-32;
+        border-top: 1px solid $color-system-gray-30;
+        border-bottom: 1px solid $color-system-gray-30;
+      }
+    }
+
+    &:last-child {
+      border-bottom: 0;
+
+      @include wider-than($breakpoint-tablet) {
+        padding-top: $spacing-stack-32;
+      }
+    }
+
+    @include wider-than($breakpoint-tablet) {
+      margin-bottom: 0;
+      padding-right: 130px;
+      border: 0;
+    }
+
+    &--featured {
+      flex-basis: 50%;
+      flex-direction: column;
+      margin-right: 127px;
+      padding-right: 0;
+    }
+  }
+
+  .acg-event__image-wrapper,
+  .acg-event__content {
+    flex-basis: auto;
+    width: 100%;
+  }
+
+  .acg-event__image-wrapper {
+    margin-right: 0;
+    margin-bottom: $spacing-stack-32;
+  }
+}
+
+.acg-event-list {
+  .acg-event {
+    margin-bottom: $spacing-stack-32;
+    padding-bottom: $spacing-stack-32;
+    border-bottom: 1px solid $color-system-gray-30;
+
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+
+  .acg-event__content {
+    flex-basis: 100%;
+  }
+
+  .acg-event__image-wrapper {
+    flex-shrink: 0;
+    max-width: 300px;
+  }
+}

@@ -1,0 +1,23 @@
+@mixin card-base {
+  @include spacing-inset-24;
+  width: 100%;
+  border-radius: 0;
+  background-color: $color-system-white;
+}
+
+@mixin card-container-border {
+  @include card-base;
+  border: 1px solid $color-system-gray-20;
+}
+
+@mixin card-container-shadow {
+  @include card-base;
+  border: 0;
+  box-shadow: 0 2px 6px 0 rgba($color-system-gray-10, 0.5);
+}
+
+@mixin card-container-border-shadow {
+  @include card-base;
+  border: 1px solid $color-system-gray-20;
+  box-shadow: 0 2px 6px 0 rgba($color-system-gray-10, 0.5);
+}

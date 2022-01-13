@@ -1,0 +1,41 @@
+.acg-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: $spacing-stack-32;
+
+  .acg-pagination__link {
+    @include spacing-inset-4;
+    margin: 0 $spacing-inline-4;
+    line-height: 1;
+    text-decoration: underline;
+
+    &:hover,
+    &:focus,
+    &--current {
+      text-decoration: none;
+    }
+
+    &--disabled {
+      color: $color-system-gray-30;
+      cursor: default;
+
+      .acg-icon {
+        color: $color-system-gray-30;
+      }
+    }
+  }
+
+  &__list {
+    @include plain-list;
+    display: inline-flex;
+    flex-flow: row wrap;
+    align-items: center;
+  }
+
+  .acg-pagination__control {
+    @include spacing-squish-4-8;
+    margin: 0 $spacing-inline-4;
+    line-height: 1;
+  }
+}

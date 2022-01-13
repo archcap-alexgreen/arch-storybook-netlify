@@ -1,0 +1,118 @@
+$brand-primary-colors: (
+  "none": transparent,
+  "aqua": $color-brand-aqua,
+  "beige": $color-brand-beige,
+  "blue": $color-brand-blue,
+  "green": $color-brand-green,
+  "orange": $color-brand-orange,
+  "purple": $color-brand-purple,
+  "red": $color-brand-red,
+  "teal": $color-brand-teal,
+  "yellow": $color-brand-yellow
+);
+
+$brand-primary-colors-update-teal: (
+  "none": transparent,
+  "aqua": $color-brand-aqua,
+  "beige": $color-brand-beige,
+  "blue": $color-brand-blue,
+  "green": $color-brand-green,
+  "orange": $color-brand-orange,
+  "purple": $color-brand-purple,
+  "red": $color-brand-red,
+  "teal": $color-secondary-teal-80,
+  "yellow": $color-brand-yellow
+);
+
+@mixin text-contrast($n) {
+  $color-brightness: round(
+    (red($n) * 299) + (green($n) * 587) + (blue($n) * 114) / 1000
+  );
+  $light-color: round(
+    (red($color-system-white) * 299) + (green($color-system-white) * 587) +
+      (blue($color-system-white) * 114) / 1000
+  );
+
+  @if abs($color-brightness) < ($light-color/2) {
+    // If background color is dark
+    color: $color-system-white;
+
+    .acg-btn--primary {
+      @include btn--primary-colors($color-brand-blue, $color-system-white);
+    }
+
+    .acg-btn--secondary {
+      @include btn--secondary-colors($color-system-white);
+    }
+
+    .acg-btn--link {
+      @include btn--link-colors($color-system-white);
+    }
+  } @else {
+    // If background color is light
+    color: $color-system-gray-50;
+  }
+}
+
+@mixin background($color) {
+  @include text-contrast($color);
+  background: $color;
+}
+
+@mixin slanted-background(
+  $angleSide: "left",
+  $angle: 74deg,
+  $background: $color-brand-blue,
+  $secondary-bg: $color-limited-blue-30
+) {
+  @if $angleSide == "left" {
+    background: linear-gradient(
+      $angle,
+      transparent 0%,
+      transparent calc(40% - 24px),
+      rgba($secondary-bg, 0.4) calc(40% - 24px),
+      rgba($secondary-bg, 0.4) 40%,
+      $background 40%,
+      $background 100%
+    );
+  }
+
+  @if $angleSide == "right" {
+    background: linear-gradient(
+      $angle,
+      $background 0%,
+      $background 55%,
+      rgba($secondary-bg, 0.4) 55%,
+      rgba($secondary-bg, 0.4) calc(55% + 24px),
+      transparent calc(55% + 24px),
+      transparent 100%
+    );
+  }
+}
+
+@mixin basic-slanted-background(
+  $background: $color-system-black,
+  $background-position: 50%,
+  $side: "left",
+  $angle: 74deg
+) {
+  @if $side == "left" {
+    background: linear-gradient(
+      $angle,
+      $background 0%,
+      $background $background-position,
+      transparent $background-position,
+      transparent 100%
+    );
+  }
+
+  @if $side == "right" {
+    background: linear-gradient(
+      $angle,
+      transparent 0%,
+      transparent $background-position,
+      $background $background-position,
+      $background 100%
+    );
+  }
+}

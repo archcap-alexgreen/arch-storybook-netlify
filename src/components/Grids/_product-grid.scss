@@ -1,0 +1,39 @@
+.acg-product-grid {
+  justify-content: center;
+  margin-top: $spacing-stack-64;
+
+  .acg-card--product {
+    margin-bottom: $spacing-stack-24;
+  }
+
+  @include wider-than($breakpoint-tablet) {
+    display: grid;
+    grid-template-areas: "a featured"
+      "b featured";
+    grid-template-columns: minmax(0, 650px) minmax(0, 450px);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: $spacing-inline-32;
+    grid-row-gap: $spacing-stack-24;
+
+    .acg-card--product {
+      margin-bottom: 0;
+
+      &:nth-of-type(2) {
+        grid-area: a;
+      }
+
+      &:nth-of-type(3) {
+        grid-area: b;
+      }
+    }
+
+    .acg-card--product--featured {
+      grid-area: featured;
+    }
+  }
+}
+
+.acg-product-grid__button {
+  margin-top: $spacing-stack-64;
+  text-align: center;
+}

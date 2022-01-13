@@ -1,0 +1,32 @@
+.acg-breadcrumbs {
+  @extend %acg-wrapper;
+
+  + .acg-container {
+    padding-top: $spacing-stack-16;
+  }
+}
+
+.acg-breadcrumbs__list {
+  @include plain-list;
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  margin: $spacing-stack-16 0;
+
+  > li:not(:first-child)::before {
+    padding: 8px;
+    content: "/\00a0";
+  }
+}
+
+.acg-breadcrumbs__list__link {
+  @include type-style-bold;
+  color: $color-brand-blue;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: darken($color-brand-blue, 10%);
+    text-decoration: none;
+  }
+}

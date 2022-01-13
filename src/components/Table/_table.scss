@@ -1,0 +1,123 @@
+.acg-table {
+  width: 100%;
+  margin-bottom: $spacing-stack-64;
+  border-collapse: collapse;
+}
+
+// Row Styles
+
+.acg-table__head__row,
+.acg-table__body__row {
+  border: 1px solid $color-system-gray-10;
+}
+
+.acg-table__body__row {
+  &:hover {
+    background-color: $color-system-gray-05;
+  }
+}
+
+// Body Cell Styles
+
+.acg-table__body__item {
+  @include spacing-inset-8;
+  @include type-body-small;
+  display: none;
+  text-align: left;
+
+  .acg-btn {
+    text-align: left;
+  }
+
+  &:nth-of-type(2),
+  &:first-of-type {
+    padding-left: $spacing-inline-32;
+  }
+
+  &:last-child {
+    padding-right: $spacing-inline-32;
+  }
+
+  @include wider-than($breakpoint-mobile) {
+    display: table-cell;
+  }
+}
+
+// Mobile Body Cell
+
+.acg-table__body__item--mobile {
+  display: table-cell;
+
+  .acg-btn--link {
+    margin-bottom: $spacing-stack-8;
+  }
+
+  @include wider-than($breakpoint-mobile) {
+    display: none;
+  }
+}
+
+.acg-table__mobile__value {
+  @include type-body-xsmall;
+  display: block;
+  margin-bottom: $spacing-stack-2;
+}
+
+// Head Cell Styles
+
+.acg-table__head__item {
+  @include type-body-xsmall($font-weight: $font-weight-600);
+  display: none;
+  padding: 0;
+
+  &:first-of-type .acg-table__head__sort {
+    padding-left: $spacing-inline-32;
+  }
+
+  &:last-child .acg-table__head__sort {
+    padding-right: $spacing-inline-32;
+  }
+
+  @include wider-than($breakpoint-mobile) {
+    display: table-cell;
+  }
+}
+
+.acg-table__head__sort {
+  @include spacing-inset-16;
+  @include type-body-xsmall($font-weight: $font-weight-600);
+  display: flex;
+  align-items: center;
+  width: 100%;
+  text-align: left;
+  text-transform: uppercase;
+
+  &.acg-table__head__sort--sorted-asc {
+    .acg-table__sort--asc {
+      color: $color-brand-blue;
+    }
+  }
+
+  &.acg-table__head__sort--sorted-desc {
+    .acg-table__sort--desc {
+      color: $color-brand-blue;
+    }
+  }
+
+  &.acg-btn:hover,
+  &.acg-table__head__sort--sorted-asc,
+  &.acg-table__head__sort--sorted-desc {
+    background: $color-system-gray-10;
+  }
+}
+
+.acg-table__head__sort__icon {
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+
+  .acg-icon {
+    color: $color-system-gray-30;
+    font-size: $font-size-12;
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "name": "@thinkcompany/arch-ui-library",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thinkcompany/arch-ui-library"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/thinkcompany"
+  },
+  "version": "1.15.25",
+  "description": "",
+  "main": "dist/bundle.js",
+  "scripts": {
+    "start": "npm run storybook",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "start-storybook -p 6006 -s ./src,./src/assets",
+    "build-storybook": "build-storybook -s ./src,./src/assets",
+    "tokens": "node ./build/scripts/tokens.js && npm run format",
+    "icons": "node ./build/scripts/combine-svg.js",
+    "build": "webpack -p --config build/config/webpack.config.babel.js",
+    "lint": "npm run lint:sass && npm run lint:js",
+    "lint:sass": "stylelint '**/*.scss' --config ./.stylelintrc.json  --fix",
+    "lint:js": "eslint 'src/**/*.js'",
+    "format": "prettier --config ./prettier.config.js --ignore-path ./.prettierignore \"src/**/*.{js,json,scss,css}\" --write",
+    "ci": "npm install",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.14.0",
+    "normalize.css": "^8.0.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.11.1",
+    "@babel/preset-env": "^7.11.0",
+    "@babel/register": "^7.10.5",
+    "@stormid/storybook-html-addon-markup": "^0.1.1",
+    "@storybook/addon-a11y": "^6.1.2",
+    "@storybook/addon-docs": "^6.1.2",
+    "@storybook/addon-knobs": "^6.1.2",
+    "@storybook/addon-viewport": "^6.1.2",
+    "@storybook/html": "^6.1.2",
+    "autoprefixer": "^9.8.6",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.1.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^6.0.3",
+    "css-loader": "^4.2.1",
+    "eslint": "^7.6.0",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-prettier": "^3.1.4",
+    "file-loader": "^6.0.0",
+    "fs-extra": "^9.0.1",
+    "html-webpack-plugin": "^4.3.0",
+    "mini-css-extract-plugin": "^0.10.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "postcss": "^7.0.32",
+    "postcss-flexbugs-fixes": "^4.2.1",
+    "postcss-loader": "^3.0.0",
+    "prettier": "^2.0.5",
+    "react": "^16.13.1",
+    "react-is": "^16.13.1",
+    "sass": "^1.26.10",
+    "sass-loader": "^9.0.3",
+    "style-loader": "^1.2.1",
+    "stylelint": "^13.6.1",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-recommended-scss": "^4.2.0",
+    "stylelint-order": "^4.1.0",
+    "stylelint-scss": "^3.18.0",
+    "stylelint-webpack-plugin": "^2.1.0",
+    "svg-sprite": "^1.5.0",
+    "terser-webpack-plugin": "^4.1.0",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  },
+  "browserslist": [
+    "defaults"
+  ]
+}

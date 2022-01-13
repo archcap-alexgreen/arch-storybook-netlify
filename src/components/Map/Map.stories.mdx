@@ -1,0 +1,20 @@
+import { Meta, Story } from '@storybook/addon-docs/blocks';
+import { useEffect } from '@storybook/client-api';
+import * as stories from './SalesMap';
+
+<Meta title="Components / Map" />
+
+# Map
+
+The map provides an interactive way to search for representatives from a specific area. Hovering over a region will change the color to confirm the selected area. Clicking the selected area will result in representatives being shown to the left.
+
+The user can then see information associated with all representatives and can browse and choose representatives.
+
+<br />
+
+<Story name="Sales Map">
+  {stories.SalesMap()}
+</Story>
+
+
+

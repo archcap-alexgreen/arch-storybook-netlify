@@ -1,0 +1,68 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  @include type-body-default($color-system-gray-50);
+  background-color: $color-system-white;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 $spacing-stack-16;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+ol,
+ul {
+  li {
+    margin-bottom: $spacing-stack-8;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+svg {
+  max-width: 100%;
+}
+
+a {
+  color: $color-brand-blue;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+}
+
+.acg-accessibly-hidden,
+%accessibly-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  white-space: nowrap;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+}

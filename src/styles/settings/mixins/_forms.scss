@@ -1,0 +1,7 @@
+@mixin form-input-border {
+  border: 1px solid $color-system-gray-10;
+}
+
+@mixin opacity--disabled {
+  opacity: 0.4;
+}

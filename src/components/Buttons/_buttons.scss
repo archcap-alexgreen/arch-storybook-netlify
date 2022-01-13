@@ -1,0 +1,74 @@
+/* ----------------------------------------------*\
+    Buttons
+\*---------------------------------------------- */
+
+.acg-btn {
+  @include spacing-squish-12-24;
+  @include type-body-small(
+    $font-color: inherit,
+    $font-weight: $font-weight-600
+  );
+  position: relative;
+  border: none;
+  background: none;
+  line-height: 1;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  appearance: none;
+
+  // Remove in case acg-btn is applied to anchors
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+}
+
+/* ----------------------------------------------*\
+    Primary Button
+\*---------------------------------------------- */
+.acg-btn--primary {
+  @include btn--primary-colors;
+}
+
+/* ----------------------------------------------*\
+    Secondary Button
+\*---------------------------------------------- */
+.acg-btn--secondary {
+  @include btn--secondary-colors;
+}
+
+/* ----------------------------------------------*\
+    Link Button
+\*---------------------------------------------- */
+.acg-btn--link {
+  @include btn--link-colors($color-brand-blue);
+  padding: 0;
+  border-radius: 0;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+}
+
+/* ----------------------------------------------*\
+    Icon Button Variant
+\*---------------------------------------------- */
+.acg-btn--icon,
+.acg-btn--icon-text {
+  @include spacing-inset-8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+}
+
+.acg-btn--icon-text {
+  @include spacing-squish-12-24;
+}
+
+.acg-btn--icon-text > i,
+.acg-btn--icon-text > .acg-icon {
+  margin-right: $spacing-inline-8;
+}

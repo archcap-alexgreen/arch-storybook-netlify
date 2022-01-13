@@ -1,0 +1,93 @@
+import { Meta, Story } from '@storybook/addon-docs/blocks';
+import * as stories from './Colors.js';
+
+<Meta title="Primitives / Colors" />
+
+# Colors
+
+The colors outlined below are based on the Arch Capital Brand Guidelines and will provide a cohesive and consistent aesthetic for its website.
+
+To ensure Arch's website is accessible for all users, the chosen colors/text + background combinations have been adjusted to provide acceptable color contrast for optimal readability. The contrast ratio of text and interactive elements meet [level AA of the Web Content Accessibility Guidelines (WCAG 2.1)](https://www.w3.org/TR/WCAG21/#contrast-minimum).
+
+<Story name="All" parameters={{ docs: { disable: true }, options: { showPanel: false } }}>
+  {stories.all()}
+</Story>
+
+## Color Story
+
+The Color storybook stories show a few different views of the color system. First, you can view all the colors in a single grid, with their hex value, name, and variable name. You can also view colors by color group (Brand, Secondary, and System). For each color in each of these views, you can also see all of the colors in the system that are accessible to combine with the given color. Each accessible color is tagged with `AA`, `AA Large`, `AAA`, and `AAA Large`. Any color that isn't at least `AA` accessible is hidden from view. This means that for any colors paired and displayed in this view, you can use them together as foreground and background colors in components. If a color pair does not appear in this view, you should not use it in combination on the site, as it is not accessible for people with low vision.
+
+## Color Groups
+
+The three color groups suggest when colors should be used:
+
+| Semantic Group | Description                                                  |
+| -------------- | ------------------------------------------------------------ |
+| Brand          | Brand colors will primarily signify action or call attention to different parts of the website. |
+| Secondary      | Secondary colors are found in CTA modules as both background and text colors. |
+| System         | System colors are primarily used for non-interactive text or elements that support text such as dividers, text fields, backgrounds etc. |
+
+### The Colors
+
+Using the color groups and assigned colors defined in this section, you can apply colors to UI objects based on the function of the object and what layer it is placed on.
+
+##### Brand
+
+<Story name="Brand" parameters={{ docs: { disable: true }, options: { showPanel: false } }}>
+  {stories.brand()}
+</Story>
+
+| Name         | Value   |
+| ------------ | ------- |
+| Brand Blue   | #0057b8 |
+| Brand Aqua   | #5BC2E7 |
+| Brand Teal   | #009CA6 |
+| Brand Green  | #99C221 |
+| Brand Red    | #BA0C2F |
+| Brand Yellow | #FEDB00 |
+| Brand Purple | #5F259F |
+| Brand Orange | #FFA300 |
+| Brand Beige  | #DFD1A7 |
+
+##### Secondary
+
+<Story name="Secondary" parameters={{ docs: { disable: true }, options: { showPanel: false } }}>
+  {stories.secondary()}
+</Story>
+
+| Name                | Value    |
+| ------------------- | -------- |
+| Secondary Aqua 20   | #DEF3FA  |
+| Secondary Aqua 30   | #CEEDF8  |
+| Secondary Aqua 50   | #ADE1F3  |
+| Secondary Teal 50   | #33B0B8  |
+| Secondary Teal 80   | #007780  |
+| Secondary Green 30  | #E0EDBC  |
+| Secondary Green 50  | #CCEE190 |
+| Secondary Yellow 50 | #FFED80  |
+| Secondary Purple    | #7F51B2  |
+| Secondary Orange    | #FFB533  |
+| Secondary Beige     | #E5DAB9  |
+
+##### System
+
+<Story name="System" parameters={{ docs: { disable: true }, options: { showPanel: false } }}>
+  {stories.system()}
+</Story>
+
+| Name           | Value   |
+| -------------- | ------- |
+| System White   | #FFFFFF |
+| System Gray 05 | #F6F6F6 |
+| System Gray 10 | #D6D9DA |
+| System Gray 20 | #C2C5C8 |
+| System Gray 30 | #999FA4 |
+| System Gray 40 | #5C656D |
+| System Gray 50 | #333F48 |
+| System Black   | #000000 |
+
+## Research on Color
+
+##### Color contrast
+
+- The contrast ratio of text and interactive elements in Arch's site will meet [level AA of the Web Content Accessibility Guidelines (WCAG 2.1)](https://www.w3.org/TR/WCAG21/#contrast-minimum).

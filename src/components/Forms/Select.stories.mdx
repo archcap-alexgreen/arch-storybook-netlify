@@ -1,0 +1,66 @@
+import { Meta, Story } from '@storybook/addon-docs/blocks';
+import * as stories from './Select.js';
+
+<Meta title="Controls &amp; Inputs / Select" />
+
+# Selects
+
+Selects are typically used within forms and therefore visually similar to text fields. When clicking on a select a menu of options expand from within a popover.
+
+<Story name="Select Dropdown">
+  {stories.selectDropdown()}
+</Story>
+
+<br />
+
+## Visual Details
+
+### Sizes
+
+There are three sizes for selects: large, medium and small.
+
+## States
+
+### Default
+
+- An unpopulated selection field that displays placeholder text as “Select an option” or “Select option(s)"
+- Best practice: use the Default Filled state with the most frequently used option preselected when possible.
+
+### Hover
+
+- When a user’s cursor is overtop of the component
+
+### Focus
+
+- When a user has tabbed the selection field into focus
+- Hitting enter will expand the field to the active state
+
+### Active
+
+- This is when a user has clicked or hit enter on the selection field
+- The popover will expand to display the list of selectable options
+
+### Default Filled
+
+- An option has been selected or pre-filled and the component is not in focus
+
+### Disabled
+
+- Interaction with the component is blocked
+
+### Error
+
+- Something has been selected incorrectly
+- Most commonly used if a required selection has not been made
+
+---
+
+## Research
+
+- [Nielsen Norman Group article on Drop Down Menus](https://www.nngroup.com/articles/drop-down-menus/)
+- [Dropdown Usability](https://baymard.com/blog/drop-down-usability)
+
+
+<Story name="Select Topic" parameters={{ docs: { disable: true }}}>
+  {stories.selectTopic()}
+</Story>

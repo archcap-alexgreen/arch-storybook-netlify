@@ -1,0 +1,123 @@
+import { Meta, Preview, Story } from '@storybook/addon-docs/blocks';
+import * as stories from './Buttons.js';
+
+<Meta title="Controls &amp; Inputs / Buttons" />
+
+# Buttons
+
+Buttons direct users to take action within a site. Buttons come in many forms and styles and help guide a user in completing a task or navigating an experience.
+
+<Story name="All">
+  {stories.All()}
+</Story>
+
+---
+
+## When to Use Buttons
+
+Buttons should be used when one or more actions need to be taken or a user needs to be directed to another location within the website. The different types of buttons can be used on any hierarchy group.
+
+### Text Buttons
+
+- Used when an action is straightforward and doesn't need a supporting icon
+
+
+<Story name="Text">
+  {stories.Text()}
+</Story>
+
+<br />
+
+<Story name="Link" parameters={{ docs: { disable: true }}}>
+  {stories.Link()}
+</Story>
+
+### Icon + Text Buttons
+
+- Used when a visual indicator will help clarify the action described in the label
+
+<Story name="Icon + Text">
+  {stories.IconWithText()}
+</Story>
+
+### Icon Only Buttons
+
+- There are certain icons that are naturally understood by a user of the platform and don't require a text label to be understood. (i.e. a magnifying glass as the search icon) 
+
+<Story name="Icon Only">
+  {stories.Icon()}
+</Story>
+
+<br />
+
+---
+
+## How it Works
+
+Because there are often many buttons on a single screen or page, hierarchy is important to know what buttons are most useful in a situation.
+
+### Primary
+
+Generally there should only be one primary button on the screen at a time. This is reserved for the most relevant and important action to take.
+
+_Example labels: Learn More, Apply, Log In_
+
+<Preview>
+  <button type="button" class="acg-btn acg-btn--primary">
+    Primary Button
+  </button>
+</Preview>
+
+### Secondary
+
+If there is more than one button on the page, every button after the primary button will be styled as secondary.
+
+_Example labels: Edit, Add, Cancel_
+
+
+<Preview>
+  <button type="button" class="acg-btn acg-btn--secondary">
+    Secondary Button
+  </button>
+</Preview>
+
+### Link
+
+Button variant that resembles hyperlinks.
+
+<Preview>
+  <button type="button" class="acg-btn acg-btn--link">
+    Link Button
+  </button>
+</Preview>
+
+## Layout
+
+### Stacked Buttons
+
+Primary buttons should be furthest to the top when stacked with secondary button(s) or text links.
+
+### Inline Buttons
+
+Primary buttons should be furthest to the right when used inline with secondary buttons.
+
+## States
+
+### Primary
+
+| State    | Background Color |
+| -------- | ---------------- |
+| Default  | Brand Blue       |
+| Hover    | Darken by 5%     |
+| Active   | Darken by 10%    |
+| Disabled | Opacity at 40%   |
+
+### Secondary
+
+| State    | Background Color |
+| -------- | ---------------- |
+| Default  | Brand Blue       |
+| Hover    | Darken by 5%     |
+| Active   | Darken by 10%    |
+| Disabled | Opacity at 40%   |
+

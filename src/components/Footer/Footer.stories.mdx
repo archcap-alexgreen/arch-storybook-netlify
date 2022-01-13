@@ -1,0 +1,35 @@
+import { Meta, Story } from '@storybook/addon-docs/blocks';
+import * as stories from './Footer.js';
+
+<Meta title="Navigation / Footer" />
+
+# Footer
+
+The footer is displayed at the bottom of most pages. It houses helpful links that aren't needed within the Primary Navigation. It's common to provide links to support, release notes, and marketing materials in the footer.
+
+<Story name="Default" parameters={{ options: { showPanel: false } }}>
+  {stories.Default()}
+</Story>
+
+## Types of Footers
+
+| Type          | Use                                                          |
+| ------------- | ------------------------------------------------------------ |
+| With Links    | Use when links are available to display                      |
+| Without Links | Use when links aren't available to display, or displaying them would disrupt the current experience |
+
+
+<br />
+
+## Visual Details
+
+| Property                        | Details                         |
+| ------------------------------- | ------------------------------- |
+| Background Color                | Background Primary              |
+| Top border                      | 0.5px solid Foreground Tertiary |
+| Font                            | Body 11 Regular                 |
+| Text color                      | Foreground Primary              |
+| Inset Spacing                   | Inset 24                        |
+| Spacing between links           | Inline 24                       |
+| Spacing between links and legal | Stack 16                        |
+| Width                           | 100% of container               |

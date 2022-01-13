@@ -1,0 +1,64 @@
+import { Meta, Story } from '@storybook/addon-docs/blocks';
+import * as stories from './InsightCard.js';
+
+<Meta title="Blocks / Insight Cards" />
+
+# Insight Cards
+
+Insight cards are used to provide information and a call to action to help a user navigate to a particular news or insight post.
+
+### Types of Insight Cards
+
+There are 4 types of insight cards.
+
+## Basic
+Basic insight cards consist of a tag, title, description, and call to action.
+
+<br />
+
+<Story name="Basic">
+  {stories.Basic()}
+</Story>
+
+<br />
+
+## Featured
+Featured insight cards consist of an image on the right, tag, title, description, and call to action.
+
+<br />
+
+<Story name="Featured">
+  {stories.Featured()}
+</Story>
+
+<br />
+
+## Featured Secondary
+Featured Secondary insight cards consist of an image on the left, tag, title, description, and call to action.
+
+<br />
+
+<Story name="Featured Secondary">
+  {stories.FeaturedSecondary()}
+</Story>
+
+<br />
+
+
+## Grid
+A grid of insight cards is primarily used on the Insights page. It's used to present many insights on one page. The layout will vary between blocks with images and blocks without them.
+
+<br />
+
+<Story name="Grid">
+  {stories.Grid()}
+</Story>
+
+## Grid Alt
+A grid of insight cards is primarily used on the Insights page. It's used to present many insights on one page. The layout is consistent with a 3x grid of cards with content and an image.
+
+<br />
+
+<Story name="Grid (alt)">
+  {stories.GridAlt()}
+</Story>

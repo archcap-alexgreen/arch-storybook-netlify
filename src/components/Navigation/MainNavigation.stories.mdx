@@ -1,0 +1,106 @@
+import { Meta, Story } from '@storybook/addon-docs/blocks';
+import * as stories from './MainNavigation.js';
+import { useEffect } from '@storybook/client-api';
+
+<Meta title="Navigation / Main Navigation" />
+
+# Main Navigation
+
+## Overview
+
+The main nav is the primary way people navigate around the Arch site.
+
+### When to use this
+
+- This component should be in use at all times within the site
+
+---
+
+## How it works
+
+- The primary navigation is a fixed panel on the top of the screen.
+- Some elements are expandable to reveal additional sub-navigation elements.
+  - Clicking on the parent element will expand the list below it
+- If the content exceeds the viewing area, the component becomes scrollable
+
+  - The Arch logo, and segment logos will remain fixed while the content is scrolled
+
+### Context Sections
+
+#### Main Content
+
+- The primary page that all users will need quick access to
+
+#### Topics Navigation Content
+
+- The deeper navigation elements across the site
+
+---
+
+## Visual Details
+
+### Color
+
+- Background is a gradient overlay to help with visibility
+  - On scroll, the background becomes solid white
+- Text is a solid color. Either black, blue, or white.
+- Selected nav items receive an underline.
+
+### Sizing
+
+- It takes up 100% of the horizontal space
+
+### Typography
+
+- Open Sans 14 Semibold
+
+### Spacing
+
+- Spacing between Nav element icon and text is Inline 6
+- Dividers between sections are 32px
+
+<Story name="Corporate" parameters={{ docs: { disable: true }, options: { showPanel: false } }}>
+  {() => {
+   useEffect(() => {
+    window.acgNav.init();
+  }, []);
+    return stories.corporate()
+  }}
+</Story>
+
+<Story name="Insurance" parameters={{ docs: { disable: true }, options: { showPanel: false } }}>
+  {() => {
+   useEffect(() => {
+    window.acgNav.init();
+  }, []);
+    return stories.insurance()
+  }}
+</Story>
+
+<Story name="Reinsurance" parameters={{ docs: { disable: true }, options: { showPanel: false } }}>
+  {() => {
+   useEffect(() => {
+    window.acgNav.init();
+  }, []);
+    return stories.reinsurance()
+  }}
+</Story>
+
+<Story name="Mortgage" parameters={{ docs: { disable: true }, options: { showPanel: false } }}>
+  {() => {
+   useEffect(() => {
+    window.acgNav.init();
+  }, []);
+    return stories.mortgage()
+  }}
+</Story>
+
+
+<Story name="With Global" parameters={{ docs: { disable: true }, options: { showPanel: false } }}>
+  {() => {
+   useEffect(() => {
+    window.acgNav.init();
+  }, []);
+    return stories.withGlobal()
+  }}
+</Story>

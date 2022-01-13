@@ -1,0 +1,15 @@
+@mixin divider {
+  border: 1px solid $color-system-gray-10;
+}
+
+@mixin divider-vertical {
+  @include divider;
+  display: inline-block;
+  height: 100%;
+  transform: scaleX(0.5);
+}
+
+@mixin divider-horizontal {
+  @include divider;
+  transform: scaleY(0.5);
+}

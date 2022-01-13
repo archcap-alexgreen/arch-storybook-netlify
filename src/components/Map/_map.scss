@@ -1,0 +1,60 @@
+.acg-map {
+  border: $border-default;
+
+  &__heading {
+    @include type-body-default($font-weight: $font-weight-600);
+    @include spacing-inset-8;
+    background-color: $color-system-gray-10;
+  }
+
+  &__container {
+    @include spacing-inset-12;
+    display: grid;
+    grid-template-columns: 300px auto;
+    grid-template-rows: 1fr;
+    grid-gap: 30px;
+  }
+
+  &__output {
+    display: grid;
+    max-height: 500px;
+    text-align: center;
+    overflow: scroll;
+
+    .acg-map__output__heading {
+      // IE Workaround
+      place-self: center;
+    }
+
+    &__heading {
+      @include type-display-small;
+    }
+
+    .acg-card--contact {
+      + .acg-card--contact {
+        border-top: 1px solid $color-system-gray-10;
+      }
+    }
+  }
+
+  &__input {
+    flex-shrink: 0;
+    max-width: 680px;
+  }
+
+  &__element {
+    > path {
+      fill: $color-limited-blue-30;
+      stroke: $color-system-white;
+      cursor: pointer;
+
+      &.acg-map__output__element--selected {
+        fill: $color-limited-blue-50;
+      }
+
+      &:hover {
+        fill: $color-limited-blue-80;
+      }
+    }
+  }
+}

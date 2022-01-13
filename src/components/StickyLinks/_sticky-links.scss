@@ -1,0 +1,117 @@
+.acg-sticky-links__wrapper {
+  display: flex;
+  z-index: $z-index-modal;
+  position: fixed;
+  top: 180px;
+  right: 0;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.acg-sticky-link {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: stretch;
+
+  + .acg-sticky-link {
+    margin-top: $spacing-stack-16;
+  }
+}
+
+.acg-sticky-link--open {
+  z-index: $z-index-modal;
+}
+
+.acg-sticky-link__overlay {
+  z-index: $z-index-overlay;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+@each $name, $color in $brand-primary-colors {
+  .acg-sticky-link--#{$name} {
+    .acg-sticky-link__toggle,
+    .acg-sticky-link__content {
+      background-color: $color;
+    }
+
+    * {
+      @include text-contrast($color);
+    }
+  }
+}
+
+.acg-sticky-link__toggle {
+  z-index: $z-index-active;
+  position: relative;
+  width: 40px;
+  height: 180px;
+  padding: 0;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: auto 134px;
+
+  .acg-sticky-link--open & {
+    &::after {
+      @include icon-font("\f054");
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 100%;
+      width: 24px;
+      height: 100%;
+      background: rgba($color-system-white, 0.2);
+      font-size: 12px;
+      line-height: 15.08; //height of container
+    }
+  }
+}
+
+.acg-sticky-link__toggle__text {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 180px;
+  height: 40px;
+  padding: 0 $spacing-inline-12;
+  transform: rotate(90deg);
+  transform-origin: top left;
+  font-size: 18px; // Specific font size
+  line-height: 2.25;
+  overflow: hidden;
+}
+
+.acg-sticky-link__content {
+  display: none;
+  padding: $spacing-stack-12 $spacing-inline-48 $spacing-stack-12
+    $spacing-inline-32;
+
+  .acg-sticky-link--open & {
+    display: flex;
+    animation: slide-in 0.4s ease;
+  }
+}
+
+.acg-sticky-link__list {
+  @include plain-list;
+  width: 120px;
+  margin: auto 0;
+
+  li {
+    margin-bottom: $spacing-stack-8;
+  }
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}

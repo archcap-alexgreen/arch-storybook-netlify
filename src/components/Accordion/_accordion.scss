@@ -1,0 +1,71 @@
+$accordion-padding: $spacing-stack-16 * 6;
+
+.acg-accordion {
+  @include card-container-border-shadow;
+  padding: 0;
+}
+
+.acg-accordion__toggle {
+  display: flex;
+  position: relative;
+  align-items: center;
+  width: 100%;
+  padding: $spacing-stack-16 $spacing-inline-32;
+  text-align: left;
+
+  @include wider-than($breakpoint-tablet) {
+    padding: $spacing-stack-32 $accordion-padding;
+  }
+
+  &::after {
+    @include icon-font("\f078");
+    position: absolute;
+    right: $spacing-inline-16;
+    transition: transform 0.3s;
+    color: $color-brand-blue;
+    font-size: 18px;
+
+    @include wider-than($breakpoint-tablet) {
+      right: $spacing-inline-64;
+    }
+  }
+
+  &.acg-accordion--open {
+    &::after {
+      transform: rotate(180deg);
+    }
+  }
+
+  .is-style-with-border {
+    margin-bottom: 0;
+    padding-bottom: $spacing-stack-16;
+    line-height: 1.66;
+  }
+}
+
+.acg-accordion__content {
+  display: none;
+  padding: $spacing-stack-16 $spacing-inline-32 $spacing-stack-24;
+
+  @include wider-than($breakpoint-tablet) {
+    padding: $spacing-stack-16 $accordion-padding $spacing-stack-48;
+  }
+
+  .acg-accordion--open + & {
+    display: block;
+  }
+}
+
+.acg-accordion--condensed {
+  > .acg-accordion__toggle {
+    @include spacing-squish-16-24;
+
+    &::after {
+      right: 24px;
+    }
+  }
+
+  > .acg-accordion__content {
+    padding: $spacing-stack-8 $spacing-inline-24 $spacing-stack-16;
+  }
+}

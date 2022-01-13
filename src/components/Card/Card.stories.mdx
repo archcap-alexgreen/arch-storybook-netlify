@@ -1,0 +1,98 @@
+import { Meta, Story } from '@storybook/addon-docs/blocks';
+import * as stories from './Card.js';
+
+<Meta title="Blocks / Card" />
+
+# Card
+
+Cards contain information and calls to action and can vary in size, shape, and imagery depending on the context and placement within the page.
+
+### Types of Cards
+
+There are 6 types of cards...
+
+- Summary
+- Location
+- Product
+- Link List
+- Contact
+- Container
+
+**Summary** cards are used...
+
+- in sections underneath headers, in groups of 1, 2, or 3
+- to present a quick summary of information accompanied with a single Call to Action button
+
+<br />
+
+<Story name="Summary">
+  {stories.Summary()}
+</Story>
+
+<br />
+
+ **Location** cards are used...
+
+- to provide location information after a search
+- when calling out or listing locationsf or users to navigate to with a single call to action
+- presenting address and contact information for a location
+
+<br />
+
+<Story name="Location">
+  {stories.Location()}
+</Story>
+
+<br />
+
+ **Product** cards are used...
+
+- to provide information on products, with an accompanying image and single call to action
+- give a user a bite sized summary of a product with an option to explore/learn more
+
+<br />
+
+<Story name="Product">
+  {stories.Product()}
+</Story>
+
+<br />
+
+ **Link List** cards are used...
+
+- listing multiple links under a common topic
+- giving a user the visibility into a section of the site, and having the ability to choose which area to directly navigate to
+
+<br />
+
+<Story name="Link List">
+  {stories.LinkList()}
+</Story>
+
+<br />
+
+ **Contact** cards are used...
+
+- to provide an area for contact information of a specific person
+
+
+<br />
+
+<Story name="Contact">
+  {stories.Contact()}
+</Story>
+
+<br />
+
+ **Container** cards are used...
+
+- to provide a larger volume of text information with a designated header
+
+
+<br />
+
+<Story name="Container">
+  {stories.Container()}
+</Story>
+
+<br />

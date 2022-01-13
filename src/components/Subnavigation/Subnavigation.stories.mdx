@@ -1,0 +1,51 @@
+import { Meta, Story } from '@storybook/addon-docs/blocks';
+import * as stories from './Subnavigation.js';
+
+<Meta title="Navigation / Subnavigation" />
+
+# Subnavigation
+
+## Overview
+
+The secondary navigation provides a deeper level of navigation when the Primary Navigation isn't sufficient.
+
+<Story name="Default" parameters={{ options: { showPanel: false } }}>
+  {stories.Default()}
+</Story>
+
+<br />
+
+### When to use this
+
+- Use this when a section of the site contains sections of r page for the user to navigate.
+
+## How it works
+
+- The primary navigation is a fixed to the section underneath the hero image
+- Clicking a link will scroll the user down the page to their desired section
+
+### Context Sections
+
+#### Main Content
+
+- The section of the page that users will have quick access to
+
+## Visual Details
+
+### Color
+
+- Background is white with a light shadow
+- Text is System Gray 50
+- Selected nav items receive an underline and become Brand Blue
+
+### Sizing
+
+- It takes up 100% of the horizontal space
+
+### Typography
+
+- Open Sans 14 Semibold
+
+### Spacing
+
+- Distance between nav items is 32px

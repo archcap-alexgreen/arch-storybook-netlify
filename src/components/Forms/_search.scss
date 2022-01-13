@@ -1,0 +1,77 @@
+/* ----------------------------------------------*\
+      Search Wrapper
+\*---------------------------------------------- */
+.acg-search__wrapper {
+  position: relative;
+}
+
+/* ----------------------------------------------*\
+      Search Input
+\*---------------------------------------------- */
+input[type="search"] {
+  appearance: none;
+}
+
+/* clears the ‘X’ from Internet Explorer */
+input[type="search"]::-ms-clear,
+input[type="search"]::-ms-reveal {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+/* clears the ‘X’ from Chrome */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+
+.acg-form__search__input {
+  &[disabled] + .acg-form__search-icon {
+    > .fa-search {
+      color: $color-system-gray-10;
+    }
+  }
+}
+
+.acg-form__input--large {
+  @include type-body-default;
+  padding-right: 32px;
+
+  + .acg-form__search-icon {
+    right: 16px;
+    width: 20px;
+    height: 20px;
+
+    > .fa-search {
+      font-size: $font-size-20;
+    }
+  }
+}
+
+.acg-form__input--medium {
+  padding-right: 32px;
+}
+
+.acg-form__input--small {
+  padding-right: 32px;
+}
+
+/* ----------------------------------------------*\
+      Search Icon
+\*---------------------------------------------- */
+
+.acg-form__search-icon {
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  transform: translateY(-50%); // Vertically center icon
+  color: $color-brand-blue;
+  line-height: 1;
+}

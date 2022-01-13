@@ -1,0 +1,41 @@
+.documentation-spacing--internal {
+  .spacing-block {
+    display: inline-block;
+    background: $documentation-pink;
+
+    .content {
+      display: block;
+      width: 50px;
+      height: 50px;
+      background: $documentation-white;
+    }
+  }
+}
+
+.documentation-spacing--external {
+  .spacing-block--stack {
+    width: calc(100% - 40px);
+    border: 1px solid $documentation-pink;
+    background: $documentation-pink;
+
+    .content {
+      display: block;
+      width: 100%;
+      height: 50px;
+      background: $documentation-white;
+    }
+  }
+
+  .spacing-block--inline {
+    display: flex;
+    border: 1px solid $documentation-pink;
+    background: $documentation-pink;
+
+    .content {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      background: $documentation-white;
+    }
+  }
+}

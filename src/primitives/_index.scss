@@ -1,0 +1,17 @@
+/* START: storybook specific styles */
+$documentation-black: #000;
+$documentation-white: #fff;
+$documentation-gray: #efefef;
+$documentation-pink: #fb0091;
+$documentation-padding: 20px;
+
+@import "./_documentation-styles/Global";
+@import "./_documentation-styles/Grid";
+@import "./_documentation-styles/Block";
+@import "./_documentation-styles/Colors";
+@import "./_documentation-styles/Spacing";
+@import "./_documentation-styles/Typography";
+@import "./_documentation-styles/Cards";
+@import "./_documentation-styles/Select";
+
+/* END: storybook specific styles */

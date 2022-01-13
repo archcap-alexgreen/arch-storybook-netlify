@@ -1,0 +1,102 @@
+/* ----------------------------------------------*\
+     Compositional mixins
+\*---------------------------------------------- */
+
+// The base style for all fonts. Accepts an optional font color parameter
+@mixin type-base-style($font-color: inherit) {
+  color: $font-color;
+  font-family: $font-stack-sans;
+  font-size: $font-size-16;
+  line-height: 1.5;
+}
+
+/* ----------------------------------------------*\
+     Icon Font mixins
+\*---------------------------------------------- */
+@mixin icon-font($content) {
+  font-family: "Font Awesome 5 Free", sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  content: $content;
+}
+
+/* ----------------------------------------------*\
+     Styling mixins
+\*---------------------------------------------- */
+@mixin type-style-bold {
+  font-weight: $font-weight-600;
+}
+
+/* ----------------------------------------------*\
+    Type mixins
+\*---------------------------------------------- */
+@mixin type-display-large($font-color: inherit) {
+  @include type-base-style($font-color);
+  font-size: $font-size-54;
+  font-weight: $font-weight-600;
+  line-height: 1.2;
+}
+
+@mixin type-display-medium(
+  $font-color: inherit,
+  $font-weight: $font-weight-600
+) {
+  @include type-base-style($font-color);
+  font-size: $font-size-40;
+  font-weight: $font-weight;
+  line-height: 1.1;
+}
+
+@mixin type-display-small(
+  $font-color: inherit,
+  $font-weight: $font-weight-600
+) {
+  @include type-base-style($font-color);
+  font-size: $font-size-32;
+  font-weight: $font-weight;
+  line-height: 1.2;
+}
+
+@mixin type-display-tiny($font-color: inherit, $font-weight: $font-weight-400) {
+  @include type-base-style($font-color);
+  font-size: $font-size-24;
+  font-weight: $font-weight;
+  line-height: 1.2;
+}
+
+@mixin type-body-large($font-color: inherit, $font-weight: $font-weight-400) {
+  @include type-base-style($font-color);
+  font-size: $font-size-20;
+  font-weight: $font-weight;
+  line-height: 1.3;
+}
+
+@mixin type-body-default($font-color: inherit, $font-weight: $font-weight-400) {
+  @include type-base-style($font-color);
+  font-weight: $font-weight;
+}
+
+@mixin type-body-small($font-color: inherit, $font-weight: $font-weight-400) {
+  @include type-base-style($font-color);
+  font-size: $font-size-14;
+  font-weight: $font-weight;
+}
+
+@mixin type-body-xsmall($font-color: inherit, $font-weight: $font-weight-400) {
+  @include type-base-style($font-color);
+  font-size: $font-size-12;
+  font-weight: $font-weight;
+}
+
+/* ----------------------------------------------*\
+    List mixins
+\*---------------------------------------------- */
+@mixin plain-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    margin-bottom: 0;
+  }
+}

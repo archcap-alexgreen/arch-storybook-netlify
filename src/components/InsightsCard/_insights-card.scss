@@ -1,0 +1,230 @@
+$grid-areas: (
+  1: a,
+  2: featured,
+  3: c,
+  4: d,
+  5: e,
+  6: featured2,
+  7: g,
+  8: h,
+  9: i,
+  10: j
+);
+
+$grid-gap: 30px;
+
+.acg-card--insights {
+  position: relative;
+  padding: 48px $spacing-stack-24;
+  background: $color-system-white;
+}
+
+.acg-card--insights__description {
+  width: 75%;
+  color: $color-system-gray-50;
+
+  .acg-card--insights__alt & {
+    width: 100%;
+  }
+}
+
+.acg-card--insights__eyebrow {
+  @include type-body-xsmall;
+  margin-bottom: $spacing-stack-8;
+  color: $color-limited-blue-30;
+}
+
+.acg-card--insights__btn {
+  @include type-body-small;
+  display: inline-block;
+  margin-top: $spacing-stack-24;
+}
+
+.acg-card--insights__image:not(.acg-card--insights__image__alt) {
+  display: none; // Hidden by default
+}
+
+@mixin insights-card--featured {
+  display: flex;
+  width: 100%;
+
+  &::before {
+    @include slanted-background(
+      "right",
+      80deg,
+      $color-system-white,
+      $color-system-white
+    );
+    z-index: $z-index-main;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: "";
+  }
+
+  .acg-card__content__wrapper {
+    z-index: $z-index-main + 1;
+    position: relative;
+    width: 50%;
+    background: none;
+  }
+
+  .acg-card--insights__description {
+    width: 100%;
+  }
+
+  .acg-card--insights__image {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  @include wider-than($breakpoint-tablet) {
+    grid-area: featured2;
+  }
+}
+
+@mixin insights-card--featured-secondary {
+  flex-direction: row-reverse;
+
+  &::before {
+    @include slanted-background(
+      "left",
+      80deg,
+      $color-system-white,
+      $color-system-white
+    );
+  }
+
+  .acg-card--insights__image {
+    display: block;
+    right: auto;
+    left: 0;
+  }
+}
+
+.acg-card--insights--featured {
+  @include insights-card--featured;
+}
+
+.acg-card--insights--featured-secondary {
+  @include insights-card--featured-secondary;
+}
+
+.acg-card--insights__grid:not(.acg-card--insights__grid__alt) {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(12, auto);
+  grid-gap: $spacing-stack-32;
+
+  .acg-card--insights {
+    &:nth-child(2),
+    &:nth-child(6) {
+      @include insights-card--featured;
+    }
+
+    &:nth-child(2) {
+      @include insights-card--featured-secondary;
+    }
+  }
+
+  @include wider-than($breakpoint-tablet) {
+    grid-template: "a featured featured" auto
+      "c d e" auto
+      "featured2 featured2 g" auto
+      "h i j" auto/ 1fr 1fr 1fr;
+
+    @each $i, $area in $grid-areas {
+      .acg-card--insights:nth-child(#{$i}) {
+        grid-area: $area;
+      }
+    }
+  }
+}
+
+.acg-card--insights__grid__alt {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.acg-card--insights__alt {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100%;
+  margin-bottom: $grid-gap;
+  border: 1px solid $color-system-gray-10;
+  border-radius: 4px;
+  background-color: $color-system-white;
+  overflow: hidden;
+
+  @include wider-than($breakpoint-mobile) {
+    width: calc(50% - (#{$grid-gap} / 2));
+    margin-right: $grid-gap;
+
+    &:nth-of-type(even) {
+      margin-right: 0;
+    }
+  }
+
+  @include wider-than($breakpoint-tablet) {
+    width: calc(33.3% - ((#{$grid-gap} * 2) / 3));
+
+    &:nth-of-type(even) {
+      margin-right: $grid-gap;
+    }
+
+    &:nth-of-type(3n) {
+      margin-right: 0;
+    }
+  }
+
+  .acg-card__heading {
+    margin-bottom: $spacing-stack-4;
+    font-size: $font-size-20;
+    line-height: (28 / 20);
+  }
+
+  .acg-card__desc {
+    font-size: $font-size-16;
+    line-height: 1.75;
+  }
+
+  .acg-btn--link {
+    display: inline-block;
+    margin-top: $spacing-stack-16;
+  }
+
+  .acg-card__eyebrow {
+    margin-bottom: $spacing-stack-4;
+    color: $color-system-gray-30;
+  }
+}
+
+.acg-card__content__wrapper__alt {
+  order: 1;
+  padding: $spacing-stack-32 $spacing-inline-32;
+}
+
+.acg-card--insights__image__alt {
+  position: relative;
+  order: 0;
+  width: 100%;
+  height: 0;
+  padding-bottom: (9 / 16) * 100%;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

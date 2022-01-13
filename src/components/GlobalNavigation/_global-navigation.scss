@@ -1,0 +1,150 @@
+.acg-menu {
+  @include plain-list;
+}
+
+/**
+ * GLOBAL NAVIGATION
+ * ========================================================================= */
+.acg-global-nav {
+  background: $color-system-gray-50;
+
+  .acg-menu,
+  .acg-menu__item {
+    display: none;
+
+    @include wider-than($breakpoint-tablet) {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+
+  .acg-menu__item {
+    a {
+      @include type-body-xsmall;
+      padding: $spacing-stack-12 20px;
+      color: $color-system-white;
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        background: $color-system-gray-40;
+      }
+    }
+
+    &.current-menu-item {
+      > a {
+        @include type-style-bold;
+        background-color: $color-brand-blue;
+
+        &:hover,
+        &:focus {
+          background-color: $color-limited-blue-50;
+        }
+      }
+    }
+  }
+}
+
+.acg-global-nav__container {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  @include wider-than($breakpoint-tablet) {
+    @include acg-wrapper--wide;
+    flex-direction: row;
+  }
+}
+
+.acg-menu--global,
+.acg-menu--global-secondary,
+.acg-menu--global-tertiary {
+  flex-shrink: 0;
+}
+
+.acg-menu--global-secondary {
+  @include wider-than($breakpoint-tablet) {
+    margin-left: auto;
+  }
+}
+
+.acg-menu--global-tertiary {
+  display: flex;
+  justify-content: flex-end;
+
+  @include wider-than($breakpoint-tablet) {
+    justify-content: space-around;
+  }
+}
+
+.acg-global-nav__search {
+  display: none;
+  align-items: center;
+  margin-right: $spacing-inline-12;
+
+  @include wider-than($breakpoint-tablet) {
+    display: flex;
+  }
+
+  &__label {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    justify-content: center;
+    height: 100%;
+    padding: 0 $spacing-inline-12;
+    color: $color-system-white;
+
+    &:hover,
+    &:focus {
+      background: $color-system-gray-40;
+    }
+  }
+
+  &__input {
+    width: 0;
+    padding: 0;
+    transition: width 0.4s ease, background-color 0.4s ease;
+    border: 0;
+    border-radius: $border-radius-small;
+    background-color: transparent;
+
+    &::placeholder {
+      color: transparent;
+    }
+
+    &:focus {
+      @include spacing-squish-4-8;
+      width: 150px;
+      background-color: $color-system-white;
+
+      &::placeholder {
+        color: $color-system-gray-30;
+      }
+    }
+  }
+}
+
+.acg-global-nav__stock {
+  @include type-body-xsmall($color-system-white, $font-weight-600);
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  padding: $spacing-stack-12 $spacing-inline-32;
+
+  @include wider-than($breakpoint-tablet) {
+    @include background($color-system-gray-40);
+  }
+}
+
+.acg-global-nav__stock__change {
+  margin-left: $spacing-inline-24;
+
+  &--down {
+    color: $color-secondary-aqua-30;
+  }
+
+  &--up {
+    color: $color-secondary-green-30;
+  }
+}

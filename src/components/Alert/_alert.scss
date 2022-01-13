@@ -1,0 +1,33 @@
+.acg-alert {
+  @include spacing-inset-16;
+  background: $color-system-white;
+
+  &[aria-hidden="true"] {
+    display: none;
+  }
+}
+
+.acg-alert--container {
+  @extend %acg-wrapper--wide;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+}
+
+.acg-alert__content-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  margin-right: auto;
+}
+
+.acg-alert__content {
+  margin-right: $spacing-inline-16;
+}
+
+.acg-alert__close {
+  @include spacing-inset-8;
+  color: $color-brand-blue;
+}

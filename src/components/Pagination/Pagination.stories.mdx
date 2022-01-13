@@ -1,0 +1,36 @@
+import { Meta, Story } from '@storybook/addon-docs/blocks';
+import * as stories from './Pagination.js';
+
+<Meta title="Navigation / Pagination" />
+
+# Pagination
+
+## Overview
+
+Pagination is a way for viewers to navigate pages of results.
+
+<br />
+
+<Story name="Default">
+  {stories.Default()}
+</Story>
+
+### When to use this
+
+- When a page is used to search or display more results than could fit on one page.
+
+## How it works
+
+- The primary navigation is a fixed at the bottom of the screen.
+- If the content exceeds the viewing area, the component becomes scrollable. When the user reaches the end, they can quickly see how many pages of results are available, and click through to the next page(s)
+
+## Visual Details
+
+### Color
+
+- The caret icons and numbers are Brand Blue
+- When on the first or last page, the caret icon will turn to System Gray 20
+
+<Story name="With Previous Disabled" parameters={{ docs: { disable: true }}}>
+  {stories.PreviousDisabled()}
+</Story>
